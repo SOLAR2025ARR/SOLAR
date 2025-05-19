@@ -1,0 +1,2 @@
+model_name_or_path:  models/llama3_lora_sft_solarlm_book
+template: llama3

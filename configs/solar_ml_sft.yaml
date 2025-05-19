@@ -1,0 +1,42 @@
+# model
+model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.05
+
+## dataset
+dataset: alpaca, solarlm_ml
+template: llama3
+cutoff_len: 1024
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+## output
+output_dir: saves/llama3-8b/lora/sft/solarlm_ml
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: false
+
+### train
+resume_from_checkpoint: true
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-3
+num_train_epochs: 25
+lr_scheduler_type: cosine
+warmup_ratio: 0.0125
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+val_size: 0.1
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 500
