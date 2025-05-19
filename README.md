@@ -12,9 +12,6 @@ By using the above framework, SOLAR addressed the domain gap and label scarcity 
 
 ![](./figs/SOLAR.jpg)
 
-## Dataset
-
-The processed datasets are released at this [link](https://drive.google.com/drive/folders/1btYAQScp94u9Vxa-jQiFc-7WlGGUHgcs?usp=sharing).
 
 ## Requirements
 
